@@ -23,22 +23,22 @@ public class ExtentReportTest{
     ExtentReports report;
    
 	
-	@BeforeSuite
-	public void loadextent()
-	{
-		report=new ExtentReports("./advancereport.html");
-        report.loadConfig(new File("./extent-config.xml"));
-	}
+//	@BeforeSuite
+//	public void loadextent()
+//	{
+//		report=new ExtentReports("./advancereport.html");
+//        report.loadConfig(new File("./extent-config.xml"));
+//	}
 	
 	@Test
 	public void CreateOrganizationTest () throws EncryptedDocumentException, FileNotFoundException, IOException { 
 		
-         ExtentTest logger = report.startTest("CreateOrganizationTest");
-         logger.log(LogStatus.INFO, "start test");
+//         ExtentTest logger = report.startTest("CreateOrganizationTest");
+//         logger.log(LogStatus.INFO, "start test");
         
          
  		
- 		logger.log(LogStatus.INFO, "navigate to home page");
+ 		//logger.log(LogStatus.INFO, "navigate to home page");
  		 WebDriver driver= new ChromeDriver(); 
  		driver.manage().window().maximize();
  		driver.get("http://localhost:8888/");
@@ -48,23 +48,23 @@ public class ExtentReportTest{
 		
        driver.findElement(By.linkText("Organizations")).click();
 		String title=driver.getTitle();
- 		if(title.contains("Organizations - vtiger"))
- 			logger.log(LogStatus.PASS,"Organization created");
- 		else
- 			logger.log(LogStatus.FAIL, "Organization not created");
- 		
+// 		if(title.contains("Organizations - vtiger"))
+// 			//logger.log(LogStatus.PASS,"Organization created");
+// 		else
+// 			logger.log(LogStatus.FAIL, "Organization not created");
+// 		
  		driver.close();
- 		report.endTest(logger);
+ 	//	report.endTest(logger);
 		
 	}
 	
 	
-	@AfterSuite
-	public void closeextent()
-	{
-		report.flush();
-		report.close();
-	}
+//	@AfterSuite
+//	public void closeextent()
+//	{
+//		report.flush();
+//		report.close();
+//	}
 	
 	
 
