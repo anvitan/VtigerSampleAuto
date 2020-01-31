@@ -26,7 +26,7 @@ public class ExtentReportTest{
 	@BeforeSuite
 	public void loadextent()
 	{
-		report=new ExtentReports("./advancereport.html");
+		report=new ExtentReports("./advancereport2.html");
         report.loadConfig(new File("./extent-config.xml"));
 	}
 	
